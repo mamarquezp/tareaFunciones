@@ -1,0 +1,22 @@
+// ejecicio1
+const readlineSync = require('readline-sync');
+require('colors');
+
+function buscarMayor(arregloDeTexto) {
+    let mayor = 0;
+    let palabraMasLarga = ''; 
+
+    for (let i = 0; i < arregloDeTexto.length; i++) {
+        if (arregloDeTexto[i].length > mayor) {
+            mayor = arregloDeTexto[i].length;
+            palabraMasLarga = arregloDeTexto[i]; 
+        }
+    }
+    return palabraMasLarga; 
+}
+
+const cadenaDeTexto = readlineSync.question("Ingresa una frase para evaluar: ");
+let arregloDeTexto = cadenaDeTexto.split(" ");
+const palabraMasLarga = buscarMayor(arregloDeTexto); 
+
+console.log(`La palabra más larga es: `.green + `${palabraMasLarga}`.blue);

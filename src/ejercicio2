@@ -1,0 +1,11 @@
+// ejecicio2
+const readlineSync = require('readline-sync');
+require('colors');
+
+function generarNumeroAleatorio(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+const max = Number (readlineSync.question("Ingrese el numero maximo: "));
+const min = Number (readlineSync.question("Ingrese el numero minimo: "));
+const numeroAleatorio = generarNumeroAleatorio(min, max);
+console.log(`El número aleatorio entre ${min} y ${max} es: `.green + `${numeroAleatorio}`.blue);
